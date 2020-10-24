@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1603491026 source:c:\users\joel_\onedrive\desktop\tps 1g\parcial\martinez.walter.labipp1g\bicicleta.c
+	"Bicicleta.h"
+	<float.h>
+
+1603490997 c:\users\joel_\onedrive\desktop\tps 1g\parcial\martinez.walter.labipp1g\bicicleta.h
+	"Tipo.h"
+	"Color.h"
+
+1603477583 c:\users\joel_\onedrive\desktop\tps 1g\parcial\martinez.walter.labipp1g\tipo.h
+
+1603477629 c:\users\joel_\onedrive\desktop\tps 1g\parcial\martinez.walter.labipp1g\color.h
+
+1603492010 source:c:\users\joel_\onedrive\desktop\tps 1g\parcial\martinez.walter.labipp1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<float.h>
+	"Bicicleta.h"
+	"Servicio.h"
+	"Cliente.h"
+
+1603477629 c:\users\joel_\onedrive\desktop\tps 1g\parcial\martinez.walter.labipp1g\servicio.h
+
+1603490997 c:\users\joel_\onedrive\desktop\tps 1g\parcial\martinez.walter.labipp1g\cliente.h
+

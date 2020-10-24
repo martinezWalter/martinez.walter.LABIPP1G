@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/martinez.joel.LABIPP1G" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/martinez.joel" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/martinez.joel.LABIPP1G" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/martinez.joel" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -35,6 +35,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Bicicleta.h" />
+		<Unit filename="Cliente.h" />
 		<Unit filename="Color.h" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="Servicio.h" />
