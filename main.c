@@ -304,10 +304,10 @@ void informes(){
     int operation = -1;
     printf("\n\n 1 - Informar por color");
     printf("\n 2 - Informar por tipo");
-    printf("\n 3 - Informar por rodado");
-    printf("\n 4 - Informar ordenado por tipo");
-    printf("\n 5 - Informar cantidad por color y tipo");
-    printf("\n 6 - Informar los colores mas utilizados");
+    printf("\n 3 - Informar por rodado (NO DISP)");
+    printf("\n 4 - Informar ordenado por tipo (NO DISP)");
+    printf("\n 5 - Informar cantidad por color y tipo (NO DISP)");
+    printf("\n 6 - Informar los colores mas utilizados (NO DISP)");
     printf("\n 7 - Salir al menu");
     printf("\n\nSeleccione informe: ");
     fflush(stdin);
@@ -326,6 +326,7 @@ void informes(){
 
 void initFunctionInfo(int operation){
     int idColor;
+    int idTipo;
     int i;
     switch (operation){
     case INFORMAR_x_COLOR:
@@ -348,8 +349,22 @@ void initFunctionInfo(int operation){
         getch();
         break;
     case INFORMAR_x_TIPO:
-        printf("\nOpcion no disponible\n");
-        printf("\nPresione una tecla para continuar\n");
+        for(i = 0; i < TAM_TIPO; i++){
+            printf("   %d - %s\n", i, tipos[i].descripcion);
+        }
+        printf("\nSeleccione Tipo(0-3): ");
+        fflush(stdin);
+        scanf("%d", &idTipo);
+
+        if(findTipoById(tipos, TAM_TIPO, idTipo) == 0){
+            system("cls");
+            listarBicicletasPorTipo(bicicletas, tipos, colores, clientes, idTipo, TAM, TAM_TIPO, TAM_COLOR, TAM_CLIENTE);
+            printf("\n\nPresione una tecla para continuar\n");
+        } else {
+            system("cls");
+            printf("No hay registros de bicicletas\n");
+            printf("\nPresione una tecla para continuar\n");
+        }
         getch();
         break;
     case INFORMAR_MENOR_RODADO:

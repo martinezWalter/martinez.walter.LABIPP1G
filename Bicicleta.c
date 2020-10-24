@@ -83,7 +83,7 @@ int listarBicicletasPorColor(Bicicleta* bicicletas, Tipo* tipos, Color* colors, 
     int i;
     printf("  ID     MARCA    TIPO    COLOR    RODADO    CLIENTE\n\n");
     for(i = 0; i < TAM; i++){
-        if(bicicletas[i].idColor == idColor){
+        if(bicicletas[i].idColor == idColor && bicicletas[i].id != 0){
             error  = 0;
             int idTipo = getTipo(tipos, bicicletas[i].idTipo, TAM_TIPO);
             int idColor = getColor(colors, bicicletas[i].idColor, TAM_COLOR);
@@ -101,6 +101,31 @@ int listarBicicletasPorColor(Bicicleta* bicicletas, Tipo* tipos, Color* colors, 
     }
     return error;
 }
+
+int listarBicicletasPorTipo(Bicicleta* bicicletas, Tipo* tipos, Color* colors, Cliente* clientes, int idTipo, int TAM, int TAM_TIPO, int TAM_COLOR, int TAM_CLIENTE){
+    int error = -1;
+    int i;
+    printf("  ID     MARCA    TIPO    COLOR    RODADO    CLIENTE\n\n");
+    for(i = 0; i < TAM; i++){
+        if(bicicletas[i].idTipo == idTipo && bicicletas[i].id != 0){
+            error  = 0;
+            int idTipo = getTipo(tipos, bicicletas[i].idTipo, TAM_TIPO);
+            int idColor = getColor(colors, bicicletas[i].idColor, TAM_COLOR);
+            int idCliente = getCliente(clientes, bicicletas[i].idCliente, TAM_CLIENTE);
+            if(idTipo != -1 && idColor != -1 && idCliente != -1){
+                printf("  %d    %s    %s    %s    %2.1lf    %s   \n",
+                    bicicletas[i].id,
+                    bicicletas[i].marca,
+                    tipos[idTipo].descripcion,
+                    colors[idColor].nombreColor,
+                    bicicletas[i].rodado,
+                    clientes[idCliente].nombre);
+            }
+        }
+    }
+    return error;
+}
+
 
 int getTipo(Tipo* tipos, int id, int TAM_TIPO){
     int error = -1;
